@@ -35,8 +35,8 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
 
         auth: {
-            user: "oguzhaneee@gmail.com",
-            pass: "hphmpdvsejfgntie"
+            user: "",
+            pass: ""
         }
     });
 

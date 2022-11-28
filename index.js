@@ -28,9 +28,9 @@ app.post("/upload", upload.single("file"), (req, res) => {
     const file = req.file;
     console.log(file)
     const transporter = nodemailer.createTransport({
-        service: "gmail",
-        host: "smtp.gmail.com",
-        port: 465,
+        service: "",
+        host: "",
+        port: ,
         secure: true,
 
 
@@ -51,8 +51,8 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
 
     const mailOptions = {
-        from: "oguzhaneee@gmail.com",
-        to: 'oguzhaneee@gmail.com',
+        from: "",
+        to: ',
         subject: 'Sending Email using Node.js',
         html: filestream,
         

@@ -10,10 +10,11 @@ const handlebars = require('handlebars');
 
 const fs = require('fs');
 
-const multer = require('multer');
+// const multer = require('multer');
 
-const upload = multer({dest: 'uploads/'});
+// const upload = multer({dest: 'uploads/'});
 
+const path = require('path');
 
 
 app.use(express.json());
@@ -23,38 +24,55 @@ app.use(cors({origin: 'http://localhost:3000'}));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.post("/upload", upload.single("file"), (req, res) => {
+app.get("/send", (req, res) => {
 
-    const file = req.file;
-    console.log(file)
+   
     const transporter = nodemailer.createTransport({
-        service: "",
-        host: "",
-        port: ,
+        service: "gmail",
+        host: "smtp.gmail.com",
+        port: 587,
         secure: true,
 
 
         auth: {
-            user: "",
+            user: "oguzhaneee@gmail.com",
             pass: ""
         }
     });
 
-    const filestream = fs.createReadStream(file.path);
+    const filepath = path.join(__dirname,"./extra-mails/6_tablehtml_newyear_tr.html");
 
+    const source = fs.readFileSync(filepath, "utf8").toString();
+
+
+    const template = handlebars.compile(source);
     
 
-    // const source = filestream;
-
-    // const template = handlebars.compile(source);
+   
 
 
+    const maillist = ['oguzhaneee@gmail.com'];
+    
 
     const mailOptions = {
-        from: "",
-        to: ',
+        from: "oguzhaneee@gmail.com",
+        to: maillist,
         subject: 'Sending Email using Node.js',
-        html: filestream,
+        html: template,
+        attachments: [
+            {
+                filename: "newyear.JPG",
+                path: path.join(__dirname,"./assets/newyear.JPG"),
+                cid: "mainlogo"
+            },
+            {
+                filename: "radarplot_tr.png",
+                path: path.join(__dirname,"./assets/radarplot_tr.png"),
+                cid: "radar"
+
+            }
+        ]
+
         
     };
 
@@ -79,6 +97,6 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
 
 app.listen(3001, () => {
-    console.log("Server is running on port 5000");
+    console.log("Server is running on port 3001");
     }
 )

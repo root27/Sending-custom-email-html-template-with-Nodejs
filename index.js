@@ -58,7 +58,44 @@ app.get("/send", (req, res) => {
         from: "oguzhaneee@gmail.com",
         to: maillist,
         subject: 'Sending Email using Node.js',
-        html: template,
+        html: `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Title of the document</title>
+            
+            </head>
+
+            <body>
+
+            <table role="presentation" 
+            style="border-collapse: separate;mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; background: #ffffff; border-radius: 3px; width: 100%;"
+            >
+          
+            <tr>
+                <td  style="background: url('cid:mainlogo'); height: 100vh; width: 600px; border-radius: 70px; background-repeat: no-repeat;
+                background-position: center; background-size: 50% 100%;">
+                    
+                        
+                    
+                    
+                        <img src="cid:radar"
+                            style=" 
+                            margin-right: 200px;
+                            margin-bottom:300px;
+                            width: 418px;
+                            border-radius: 250px;" />
+                    
+                    
+                
+                </td>
+            </tr>
+        </table>
+            </body>
+        </html>
+                                        
+                                    
+                         `,	
         attachments: [
             {
                 filename: "newyear.JPG",

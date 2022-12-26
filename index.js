@@ -40,12 +40,7 @@ app.get("/send", (req, res) => {
         }
     });
 
-    const filepath = path.join(__dirname,"./extra-mails/6_tablehtml_newyear_tr.html");
 
-    const source = fs.readFileSync(filepath, "utf8").toString();
-
-
-    const template = handlebars.compile(source);
     
 
    
@@ -55,7 +50,7 @@ app.get("/send", (req, res) => {
     
 
     const mailOptions = {
-        from: "oguzhaneee@gmail.com",
+        from: "irmak@uniqgene.com",
         to: maillist,
         subject: 'Sending Email using Node.js',
         html: `
@@ -66,45 +61,53 @@ app.get("/send", (req, res) => {
             
             </head>
 
-            <body>
+            <body class
+    style="background-color: #eaebed; font-family: Poppins; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body"
+        style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; background-color: #eaebed; width: 100%;"
+        width="100%" bgcolor="#eaebed">
+        <tr>
+            <td style="font-family: Poppins; font-size: 14px; vertical-align: top;" valign="top">&nbsp;</td>
+            <td class="container"
+                style="font-family: Poppins; font-size: 14px; vertical-align: top; display: block; max-width: 580px; padding: 10px; width: 580px; Margin: 0 auto;"
+                width="580" valign="top">
+                <div class="content"
+                    style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
+                    <table role="presentation" class="main"
+                        style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; background: #ffffff; border-radius: 3px; width: 100%;"
+                        width="100%">
+                      
+                        <tr>
+                            <td class="wrapper"
+                                style="font-family: Poppins; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;"
+                                valign="top">
+                               
+                                    <img src="cid:radar"
+                                        />
+                                
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
 
-            <table role="presentation" 
-            style="border-collapse: separate;mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; background: #ffffff; border-radius: 3px; width: 100%;"
-            >
-          
-            <tr>
-                <td  style="background: url('cid:mainlogo'); height: 100vh; width: 600px; border-radius: 70px; background-repeat: no-repeat;
-                background-position: center; background-size: 50% 100%;">
-                    
-                        
-                    
-                    
-                        <img src="cid:radar"
-                            style=" 
-                            margin-right: 200px;
-                            margin-bottom:300px;
-                            width: 418px;
-                            border-radius: 250px;" />
-                    
-                    
-                
-                </td>
-            </tr>
-        </table>
-            </body>
+        <!-- END MAIN CONTENT AREA -->
+    </table>
+
+  
+   
+</body>
         </html>
                                         
                                     
                          `,	
         attachments: [
-            {
-                filename: "newyear.JPG",
-                path: path.join(__dirname,"./assets/newyear.JPG"),
-                cid: "mainlogo"
-            },
+            
             {
                 filename: "radarplot_tr.png",
-                path: path.join(__dirname,"./assets/radarplot_tr.png"),
+                path: path.join(__dirname,"./assets/final.png"),
                 cid: "radar"
 
             }

@@ -36,7 +36,7 @@ app.get("/send", (req, res) => {
 
         auth: {
             user: "oguzhaneee@gmail.com",
-            pass: "tmqunoerxgwaspte"
+            pass: ""
         }
     });
 

@@ -36,7 +36,7 @@ app.get("/send", (req, res) => {
 
         auth: {
             user: "oguzhaneee@gmail.com",
-            pass: ""
+            pass: "tmqunoerxgwaspte"
         }
     });
 
@@ -74,15 +74,15 @@ app.get("/send", (req, res) => {
                 <div class="content"
                     style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
                     <table role="presentation" class="main"
-                        style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; background: #ffffff; border-radius: 3px; width: 100%;"
-                        width="100%">
+                        style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; border-radius: 3px; width: 100%;
+                        ; align-items:center">
                       
                         <tr>
                             <td class="wrapper"
                                 style="font-family: Poppins; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;"
                                 valign="top">
                                
-                                    <img src="cid:radar"
+                                    <img src="cid:radar" style="width: 100%; height: auto;"
                                         />
                                 
                             
@@ -107,7 +107,7 @@ app.get("/send", (req, res) => {
             
             {
                 filename: "radarplot_tr.png",
-                path: path.join(__dirname,"./assets/final.png"),
+                path: path.join(__dirname,"./assets/00a9e5.png"),
                 cid: "radar"
 
             }
